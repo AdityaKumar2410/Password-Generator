@@ -6,30 +6,54 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+    <div class="tabs">
+      <button class="tab-button" onclick="showTab('generate')">Generate</button>
+      <button class="tab-button" onclick="showTab('fetch')">Fetch</button>
+    </div>
     <div class="container">
-      <h2>Password Generator</h2>
-      <label for="length">Enter password length:</label>
-      <input type="number" id="length" min="4" max="50" placeholder="e.g. 12" />
-      <div class="checkboxes">
-        <label
-          ><input type="checkbox" id="useLowercase" checked /> Lowercase
-          (a-z)</label
-        ><br />
-        <label
-          ><input type="checkbox" id="useUppercase" checked /> Uppercase
-          (A-Z)</label
-        ><br />
-        <label
-          ><input type="checkbox" id="useNumbers" checked /> Numbers
-          (0-9)</label
-        ><br />
-        <label
-          ><input type="checkbox" id="useSymbols" checked /> Symbols
-          (!@#...)</label
-        >
+      <div class="tab-content" id="generate-tab">
+        <h2>Password Generator</h2>
+        <label for="length">Enter password length:</label>
+        <input
+          type="number"
+          id="length"
+          min="4"
+          max="50"
+          placeholder="e.g. 12"
+        />
+        <div class="checkboxes">
+          <label
+            ><input type="checkbox" id="useLowercase" checked /> Lowercase
+            (a-z)</label
+          ><br />
+          <label
+            ><input type="checkbox" id="useUppercase" checked /> Uppercase
+            (A-Z)</label
+          ><br />
+          <label
+            ><input type="checkbox" id="useNumbers" checked /> Numbers
+            (0-9)</label
+          ><br />
+          <label
+            ><input type="checkbox" id="useSymbols" checked /> Symbols
+            (!@#...)</label
+          >
+        </div>
+        <input type="text" id="keyName" placeholder="Enter Key (e.g., Gmail)" />
+        <button id="generate">Generate</button>
+        
+        <p id="result">Your password will appear here</p>
       </div>
-      <button id="generate">Generate</button>
-      <p id="result">Your password will appear here</p>
+      <label><input type="checkbox" id="savePassword" /> Save Password</label>
+      <div id="fetch-tab" class="tab-content" style="display: none">
+        <input
+          type="text"
+          id="fetchKey"
+          placeholder="Enter key to fetch password"
+        />
+        <button onclick="fetchPassword()">Fetch Password</button>
+        <p id="fetchedResult"></p>
+      </div>
     </div>
 
     <script src="./app.js"></script>
