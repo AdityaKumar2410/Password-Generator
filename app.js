@@ -23,7 +23,7 @@ function generatePassword() {
   const length = parseInt(document.getElementById("length").value);
   if (isNaN(length) || length < 4) {
     result.textContent =
-      "Please enter the passowrd length more than or equal to 4";
+      "Please enter the password length more than or equal to 4";
     return;
   }
   let lowercaseCount = "", numberCount = "", symbolCount = "", uppercaseCount = "";
