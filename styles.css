@@ -1,56 +1,98 @@
 body {
-  font-family: Arial, sans-serif;
-  background: #1e1e1e;
-  color: #f0f0f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9f9f9;
+  color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
+  padding: 20px;
 }
 
 .container {
-  background: #2c2c2c;
-  padding: 30px 40px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 255, 200, 0.2);
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   text-align: center;
-  width: 300px;
+  max-width: 400px;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #222;
 }
 
 input[type="number"] {
-  padding: 10px;
+  padding: 12px;
   margin-top: 10px;
   width: 100%;
   font-size: 16px;
-  border-radius: 6px;
+  border-radius: 8px;
   border: 1px solid #ccc;
+  box-sizing: border-box;
+  transition: border 0.2s;
+}
+
+input[type="number"]:focus {
+  border-color: #00b894;
+  outline: none;
+}
+
+.checkboxes {
+  text-align: left;
+  margin: 20px 0;
+  font-size: 14px;
+}
+
+.checkboxes label {
+  display: block;
+  margin-bottom: 8px;
 }
 
 button {
-  margin-top: 15px;
-  padding: 10px 20px;
+  margin-top: 10px;
+  padding: 12px 20px;
   font-size: 16px;
-  background: #00ffc8;
-  color: #000;
+  background: #00b894;
+  color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
+  width: 100%;
   transition: background 0.3s;
 }
 
 button:hover {
-  background: #00ccaa;
+  background: #019a7c;
 }
 
 #result {
   margin-top: 20px;
   word-wrap: break-word;
-  font-weight: bold;
-  color: #00ffae;
+  font-weight: 600;
+  color: #00695c;
+  font-size: 15px;
+  background: #f1f1f1;
+  padding: 10px;
+  border-radius: 6px;
+  min-height: 30px;
 }
-.checkboxes {
-  text-align: left;
-  margin-top: 10px;
-  margin-bottom: 10px;
+
+@media (max-width: 480px) {
+  .container {
+    padding: 20px 15px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  button {
+    font-size: 15px;
+  }
 }
